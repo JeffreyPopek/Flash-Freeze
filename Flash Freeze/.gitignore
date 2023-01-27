@@ -1,3 +1,4 @@
+
 ## Lines in this file starting with a '#' are comments
 ## Some elements are commented out, you may wish to uncomment
 ## these lines to tell git to ignore them by default
@@ -124,27 +125,3 @@ crashlytics-build.properties
 
 # GNU/Linux specials
 .directory
-This Unity project is now set up for External Version Control and your initial add, commit, and push! Yay!
-
-Initial add, commit and push
-After having set-up your Unity project for use with External Version Control as noted above. You will now want to make your initial add, commit, and push. Here's how from the command-line interface:
-
-Open a terminal window to use command-line git
-(Windows) Open git bash by clicking on the Windows Menu in the Task Bar, and typing bash
-(macOS) Open Terminal.app (You will need to install Xcode Tools as prompted by macOS).
-(GNU/Linux) Open your favorite Terminal (Konsole, Terminal, xterm, etc)
-Navigate to the root of your new Unity Project: Type cd /c/Users/$USERNAME/Source/Repos/$GIT_REPO_NAME/$MYPROJECTNAME Note that when you do this, the prompt will likely change, to show your current branch (master) at the end of the prompt line, like this:
-firstname.lastname@hostname MINGW64 /c/Users/$USERNAME/Source/Repos/$GIT_REPO_NAME/$MYPROJECTNAME (master)
-Type git status to confirm that you are in the right place. You should see a listing of folders similar to this:
-firstname.lastname@hostname MINGW64 /c/Users/$USERNAME/Source/Repos/$GIT_REPO_NAME/$MYPROJECTNAME (master)
-$ ls -a1
-./
-../
-.vs/
-Assets/
-Library/
-ProjectSettings/
-Temp/
-UnityPackageManager/
-$MYPROJECTNAME.csproj
-$MYPROJECTNAME.sln

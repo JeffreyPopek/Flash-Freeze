@@ -1,0 +1,78 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    [SerializeField] float moveSpeed = 0.1f;
+    [SerializeField] Transform[] movePoints;
+
+    bool facingRight;
+
+    int _pointIndex = 0;
+    private Transform _currentPoint;
+
+
+    //Freeze enemy
+    bool isFrozen = false;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite enemy;
+    [SerializeField] Sprite frozenEnemy;
+
+    void Awake()
+    {
+        _currentPoint = movePoints[_pointIndex];
+    }
+
+    private void FixedUpdate()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, _currentPoint.position, moveSpeed);
+
+        if (Vector2.Distance(transform.position, _currentPoint.position) < 0.01f)
+        {
+            _pointIndex++;
+            _pointIndex %= movePoints.Length;
+            _currentPoint = movePoints[_pointIndex];
+            Flip();
+        }
+    }
+
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        facingRight = !facingRight;
+    }
+
+    public void HitEnemy()
+    {
+        if (isFrozen)
+        {
+            isFrozen = false;
+            moveSpeed = 0.1f;
+            gameObject.tag = "Hazard";
+        }
+        else
+        {
+            isFrozen = true;
+            moveSpeed = 0;
+            gameObject.tag = "Ground";
+        }
+        ChangeSprite();
+    }
+
+    void ChangeSprite()
+    {
+        if(isFrozen)
+        {
+            spriteRenderer.sprite = frozenEnemy;
+        }
+        else
+        {
+            spriteRenderer.sprite = enemy;
+        }
+    }
+}
