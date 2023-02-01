@@ -1,5 +1,3 @@
-using System.Linq.Expressions;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,7 +25,7 @@ public class MovementController : MonoBehaviour
     //hazards
     string sceneName;
 
-
+    //ice
 
     void Awake()
     {
@@ -132,4 +130,13 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Ice"))
+        {
+           //coll.material.dynamicFriction = 2;
+
+            Debug.Log("ice");
+        }
+    }
 }
