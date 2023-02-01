@@ -54,12 +54,15 @@ public class Enemy : MonoBehaviour
             isFrozen = false;
             moveSpeed = 0.1f;
             gameObject.tag = "Hazard";
+            gameObject.layer = 10;
         }
         else
         {
             isFrozen = true;
             moveSpeed = 0;
             gameObject.tag = "Ground";
+            gameObject.layer = 6;
+
         }
         ChangeSprite();
     }

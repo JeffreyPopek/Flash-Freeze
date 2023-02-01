@@ -7,18 +7,27 @@ public class Shoot : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject iceMagicPrefab;
 
+    [SerializeField] private int fireRate = 1;
+
+    private bool allowMagic = true;
+
     void Update()
     {
         //fire1 is left click
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && allowMagic)
         {
-            ShootProjectile();
+            StartCoroutine(ShootProjectile());
+            //ShootProjectile();
         }
     }
 
-    void ShootProjectile()
+    IEnumerator ShootProjectile()
     {
+        allowMagic = false;
         Instantiate(iceMagicPrefab, firePoint.position, firePoint.rotation);
+        yield return new WaitForSeconds(fireRate);
+        allowMagic = true;   
     }
+
 }
 

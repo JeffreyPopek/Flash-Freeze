@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class MovementController : MonoBehaviour
 {
+    [SerializeField] private BoxCollider2D boxCollider2D;
+    [SerializeField] private LayerMask groundLayer;
+
     //x movement
     [SerializeField] float xSpeed = 1;
     float horizontalValue;
@@ -18,6 +21,9 @@ public class MovementController : MonoBehaviour
 
     [SerializeField] int maxJumps;
     int jumpCount = 0;
+
+
+
 
     //start game facing right
     bool facingRight = true;
@@ -35,6 +41,9 @@ public class MovementController : MonoBehaviour
         jumpCount = maxJumps;
         rb = GetComponent<Rigidbody2D>();
         Debug.Log("Movement Script Working");
+
+        //Player can't run into magic
+        Physics2D.IgnoreLayerCollision(7, 8);
     }
 
     void Update()
@@ -42,7 +51,7 @@ public class MovementController : MonoBehaviour
         //left: -1, nothing: 0, right: 1
         horizontalValue = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             if(jumpCount > 0)
             {
@@ -75,6 +84,31 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    private bool IsGrounded()
+    {
+        float heightTest = 1f;
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, heightTest, groundLayer);
+
+        Color rayColor;
+
+        if(raycastHit.collider != null)
+        {
+            rayColor = Color.green;
+        }
+        else
+        {
+            rayColor = Color.red; 
+        }
+        
+        Debug.DrawRay(boxCollider2D.bounds.center + new Vector3(boxCollider2D.bounds.extents.x, 0), Vector2.down * (boxCollider2D.bounds.extents.y + heightTest), rayColor);
+        Debug.DrawRay(boxCollider2D.bounds.center - new Vector3(boxCollider2D.bounds.extents.x, 0), Vector2.down * (boxCollider2D.bounds.extents.y + heightTest), rayColor);
+        Debug.DrawRay(boxCollider2D.bounds.center - new Vector3(boxCollider2D.bounds.extents.x, boxCollider2D.bounds.extents.y + heightTest), Vector2.right * (boxCollider2D.bounds.extents.x), rayColor);
+
+
+        Debug.Log(raycastHit.collider);
+
+        return raycastHit.collider != null;
+    }
 
     void Flip()
     {
@@ -83,7 +117,6 @@ public class MovementController : MonoBehaviour
         //rotate player instead of changing local scale so fire point is also flipped
         transform.Rotate(0f, 180f, 0f);
     }
-
 
     void Move(float direction)
     {

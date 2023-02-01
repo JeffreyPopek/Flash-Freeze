@@ -9,6 +9,9 @@ public class IceMagic : MonoBehaviour
 
     void Start()
     {
+        //Magic can't hit ice spike box collider
+        Physics2D.IgnoreLayerCollision(8, 9);
+
         rb.velocity = transform.right * speed;
     }
 
@@ -19,6 +22,7 @@ public class IceMagic : MonoBehaviour
         {
             enemy.HitEnemy();
         }
+
         Destroy(gameObject);
     }
 }
