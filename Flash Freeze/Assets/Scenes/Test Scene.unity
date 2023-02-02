@@ -839,6 +839,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1305036107008870930, guid: 6db91c7eaa8ccb64cbcd3363a7fddad3, type: 3}
+      propertyPath: m_Size.y
+      value: 4.5072274
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305036107008870930, guid: 6db91c7eaa8ccb64cbcd3363a7fddad3, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.964947
+      objectReference: {fileID: 0}
     - target: {fileID: 1305036107008870936, guid: 6db91c7eaa8ccb64cbcd3363a7fddad3, type: 3}
       propertyPath: m_Name
       value: Falling Ice Spike
@@ -853,7 +861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1305036107008870940, guid: 6db91c7eaa8ccb64cbcd3363a7fddad3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.39
+      value: 6.84
       objectReference: {fileID: 0}
     - target: {fileID: 1305036107008870940, guid: 6db91c7eaa8ccb64cbcd3363a7fddad3, type: 3}
       propertyPath: m_LocalPosition.z
