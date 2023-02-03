@@ -1,33 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] Transform firePoint;
-    [SerializeField] GameObject iceMagicPrefab;
+    private Camera mainCam;
+    private Vector3 mousePos;
 
-    [SerializeField] private int fireRate = 1;
+    [SerializeField] private GameObject spell;
+    [SerializeField] private Transform spellTransform;
 
-    private bool allowMagic = true;
+    [SerializeField] private bool canFire;
+    private float timer;
+    [SerializeField] private float timeBetweenFiring;
+
+
+    private void Awake()
+    {
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
+
 
     void Update()
     {
-        //fire1 is left click
-        if (Input.GetButtonDown("Fire1") && allowMagic)
+        //Magic can't hit ice spike box collider
+        Physics2D.IgnoreLayerCollision(8, 9);
+
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 rotation = mousePos - transform.position;
+
+        //Radians to degrees
+        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        if (!canFire)
         {
-            StartCoroutine(ShootProjectile());
-            //ShootProjectile();
+            timer += Time.deltaTime;
+
+            if (timer > timeBetweenFiring)
+            {
+                canFire = true;
+                timer = 0;
+            }
+        }
+        if (Input.GetMouseButton(0) && canFire)
+        {
+            canFire = false;
+            Instantiate(spell, spellTransform.position, Quaternion.identity);
         }
     }
 
-    IEnumerator ShootProjectile()
-    {
-        allowMagic = false;
-        Instantiate(iceMagicPrefab, firePoint.position, firePoint.rotation);
-        yield return new WaitForSeconds(fireRate);
-        allowMagic = true;   
-    }
 
 }
+
+
 

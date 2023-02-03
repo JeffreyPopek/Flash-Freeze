@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 12634408072375203}
   - component: {fileID: 457746508546075226}
   - component: {fileID: 5786243574376587398}
-  - component: {fileID: 9074067189142609351}
+  - component: {fileID: 4251195729294650636}
   m_Layer: 8
   m_Name: Ice Magic
   m_TagString: Untagged
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &9074067189142609351
+--- !u!114 &4251195729294650636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,8 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 253505068771389738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b317ab0055b51b54883525b0c09c974b, type: 3}
+  m_Script: {fileID: 11500000, guid: 718eb61a7f731534f87be71848b03599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 17
-  rb: {fileID: 457746508546075226}
+  force: 15
