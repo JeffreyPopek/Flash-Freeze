@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class Spell : MonoBehaviour
@@ -9,6 +10,7 @@ public class Spell : MonoBehaviour
 
     private Rigidbody2D rb;
     [SerializeField] private float force;
+
 
 
     private void Awake()
@@ -35,6 +37,7 @@ public class Spell : MonoBehaviour
             enemy.HitEnemy();
         }
 
+        //play sound
         Destroy(gameObject);
     }
 
@@ -42,5 +45,10 @@ public class Spell : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         Destroy(gameObject);
+    }
+
+    public Vector3 getMousePos()
+    {
+        return mousePos;
     }
 }
