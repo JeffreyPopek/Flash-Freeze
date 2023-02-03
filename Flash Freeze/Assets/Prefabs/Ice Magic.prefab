@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 12634408072375203}
   - component: {fileID: 457746508546075226}
   - component: {fileID: 5786243574376587398}
-  - component: {fileID: 9074067189142609351}
+  - component: {fileID: 4251195729294650636}
   m_Layer: 8
   m_Name: Ice Magic
   m_TagString: Untagged
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253505068771389738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.16, y: 1, z: 0}
-  m_LocalScale: {x: 0.58458, y: 0.58458, z: 0.58458}
+  m_LocalPosition: {x: 1.1183, y: 1.0531, z: 0}
+  m_LocalScale: {x: 0.63485384, y: 0.6568341, z: 0.58458}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.9789009, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 960c7ab042145b042a27c9b7275a7496, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,10 +121,10 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.042898845, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &9074067189142609351
+  m_Radius: 0.55804825
+--- !u!114 &4251195729294650636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,8 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 253505068771389738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b317ab0055b51b54883525b0c09c974b, type: 3}
+  m_Script: {fileID: 11500000, guid: 718eb61a7f731534f87be71848b03599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 17
-  rb: {fileID: 457746508546075226}
+  force: 15

@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] Transform[] movePoints;
+    [SerializeField] BoxCollider2D bc2D;
 
     bool facingRight;
 
@@ -55,6 +56,8 @@ public class Enemy : MonoBehaviour
             moveSpeed = 0.1f;
             gameObject.tag = "Hazard";
             gameObject.layer = 10;
+
+            GetComponent<BoxCollider2D>().size = new Vector2(15f, 12f);
         }
         else
         {
@@ -62,6 +65,8 @@ public class Enemy : MonoBehaviour
             moveSpeed = 0;
             gameObject.tag = "Ground";
             gameObject.layer = 6;
+
+            GetComponent<BoxCollider2D>().size = new Vector2(17f, 13f);
 
         }
         ChangeSprite();
