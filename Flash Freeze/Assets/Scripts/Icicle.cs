@@ -25,7 +25,9 @@ public class Icicle : MonoBehaviour
         if(collision.gameObject.CompareTag("Ground"))
         {
             Destroy(gameObject);
-            //play sound
+
+            //sound
+            FindObjectOfType<AudioManager>().Play("IceBreak");
         }
     }
 }

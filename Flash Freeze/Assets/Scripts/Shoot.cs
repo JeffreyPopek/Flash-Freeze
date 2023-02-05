@@ -48,10 +48,16 @@ public class Shoot : MonoBehaviour
         }
         if (Input.GetMouseButton(0) && canFire)
         {
-            canFire = false;
-            Instantiate(spell, spellTransform.position, Quaternion.identity);
-            FindObjectOfType<AudioManager>().Play("PlayerSpell");
+            ShootSpell();
         }
+    }
+
+
+    public void ShootSpell()
+    {
+        canFire = false;
+        Instantiate(spell, spellTransform.position, Quaternion.identity);
+        FindObjectOfType<AudioManager>().Play("PlayerSpell");
     }
 
 

@@ -15,6 +15,9 @@ public class Spell : MonoBehaviour
 
     private void Awake()
     {
+        //magic can't hit sign
+        Physics2D.IgnoreLayerCollision(8, 11);
+
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
         rb = GetComponent<Rigidbody2D>();

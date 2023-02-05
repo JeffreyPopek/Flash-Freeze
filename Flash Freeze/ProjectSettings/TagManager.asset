@@ -20,7 +20,7 @@ TagManager:
   - Magic
   - Ice Spike
   - Enemy
-  - 
+  - Wall
   - 
   - 
   - 
@@ -44,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sign
+    uniqueID: 1081560887
+    locked: 0
+  - name: Player
+    uniqueID: 2892529647
     locked: 0
