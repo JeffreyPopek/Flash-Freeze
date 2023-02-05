@@ -170,6 +170,7 @@ public class MovementController : MonoBehaviour
         jumpTime = 0;
         jumpCount -= 1;
 
+        //sound
         FindObjectOfType<AudioManager>().Play("PlayerJump"); ;
     }
 

@@ -50,6 +50,7 @@ public class Shoot : MonoBehaviour
         {
             canFire = false;
             Instantiate(spell, spellTransform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("PlayerSpell");
         }
     }
 

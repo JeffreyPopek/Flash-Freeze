@@ -848,15 +848,21 @@ MonoBehaviour:
   sounds:
   - name: PlayerJump
     clip: {fileID: 8300000, guid: c96991629660c6f459d54704cd619964, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: ArticTundra
-    clip: {fileID: 8300000, guid: 41c4ccbe8a8d0e343aa37145b2982473, type: 3}
-    volume: 0.4
+  - name: Music
+    clip: {fileID: 8300000, guid: 72952f45a0d32f54fa1475a6ea1d19bf, type: 3}
+    volume: 0.2
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: PlayerSpell
+    clip: {fileID: 8300000, guid: ee9921fddb306f04f8b3c62c300eac84, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!1 &1629102956
 GameObject:
