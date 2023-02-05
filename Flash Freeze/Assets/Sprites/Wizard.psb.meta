@@ -100,8 +100,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1602
-      y: 4
+      x: 189
+      y: 1824
       width: 356
       height: 146
     spriteID: a2d1707d1ec5d3940a17f49568ba87a4
@@ -519,7 +519,7 @@ ScriptedImporter:
     - {x: 30, y: 31}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1602, y: 4}
+    uvTransform: {x: 189, y: 1824}
     spritePosition: {x: 452, y: 450}
   - name: Weapon
     originalName: 
@@ -528,8 +528,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1108
-      y: 4
+      x: 4
+      y: 646
       width: 177
       height: 739
     spriteID: de4f75a291cb74546aeeaaaf472779c9
@@ -858,7 +858,7 @@ ScriptedImporter:
     - {x: 26, y: 27}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1108, y: 4}
+    uvTransform: {x: 4, y: 646}
     spritePosition: {x: 652, y: 226}
   - name: Body
     originalName: 
@@ -1710,8 +1710,8 @@ ScriptedImporter:
     - {x: 66, y: 67}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
-    spritePosition: {x: -415, y: -300}
+    uvTransform: {x: -68, y: -354}
+    spritePosition: {x: 72, y: 358}
   - name: Front Leg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1719,8 +1719,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1293
-      y: 432
+      x: 189
+      y: 1074
       width: 234
       height: 427
     spriteID: ed4f691d861783e46afaab65adb7050c
@@ -2316,7 +2316,7 @@ ScriptedImporter:
     - {x: 47, y: 48}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1293, y: 432}
+    uvTransform: {x: 189, y: 1074}
     spritePosition: {x: 388, y: 69}
   - name: Back Leg
     originalName: 
@@ -2325,8 +2325,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1293
-      y: 4
+      x: 189
+      y: 646
       width: 301
       height: 420
     spriteID: 3fa1cbe68138fff478291b72dc6c2f06
@@ -2913,7 +2913,7 @@ ScriptedImporter:
     - {x: 47, y: 48}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1293, y: 4}
+    uvTransform: {x: 189, y: 646}
     spritePosition: {x: 420, y: 73}
   - name: Back Arm
     originalName: 
@@ -2922,8 +2922,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1293
-      y: 867
+      x: 189
+      y: 1509
       width: 269
       height: 307
     spriteID: 145e31323acadc849bf639f9cbb90e07
@@ -3314,7 +3314,7 @@ ScriptedImporter:
     - {x: 30, y: 31}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1293, y: 867}
+    uvTransform: {x: 189, y: 1509}
     spritePosition: {x: 212, y: 283}
   characterData:
     bones:
@@ -3560,7 +3560,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: a2d1707d1ec5d3940a17f49568ba87a4
     layerID: 95
-    mosaicPosition: {x: 1602, y: 4}
+    mosaicPosition: {x: 189, y: 1824}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -3570,7 +3570,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: de4f75a291cb74546aeeaaaf472779c9
     layerID: 96
-    mosaicPosition: {x: 1108, y: 4}
+    mosaicPosition: {x: 4, y: 646}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -3590,7 +3590,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: ed4f691d861783e46afaab65adb7050c
     layerID: 99
-    mosaicPosition: {x: 1293, y: 432}
+    mosaicPosition: {x: 189, y: 1074}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -3600,7 +3600,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: 3fa1cbe68138fff478291b72dc6c2f06
     layerID: 100
-    mosaicPosition: {x: 1293, y: 4}
+    mosaicPosition: {x: 189, y: 646}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -3610,7 +3610,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: 145e31323acadc849bf639f9cbb90e07
     layerID: 101
-    mosaicPosition: {x: 1293, y: 867}
+    mosaicPosition: {x: 189, y: 1509}
     flatten: 0
     isImported: 1
     isVisible: 1
