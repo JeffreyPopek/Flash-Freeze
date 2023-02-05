@@ -184,6 +184,7 @@ public class MovementController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             jumpCount = maxJumps;
+            FindObjectOfType<AudioManager>().Play("PlayerLand");
         }
 
         if (collision.gameObject.tag == "Hazard")

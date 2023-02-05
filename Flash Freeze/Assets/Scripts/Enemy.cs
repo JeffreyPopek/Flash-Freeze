@@ -70,6 +70,8 @@ public class Enemy : MonoBehaviour
 
         }
         ChangeSprite();
+
+        FindObjectOfType<AudioManager>().Play("Freeze");
     }
 
     void ChangeSprite()
