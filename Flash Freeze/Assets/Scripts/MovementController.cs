@@ -23,7 +23,9 @@ public class MovementController : MonoBehaviour
     int jumpCount = 0;
 
 
-
+    //sound
+    //public GameObject audioManager;
+    bool isMoving = false;
 
     //start game facing right
     bool facingRight = true;
@@ -31,10 +33,9 @@ public class MovementController : MonoBehaviour
     //hazards
     string sceneName;
 
-    //ice
-
     void Awake()
     {
+        //reload into current scene
         Scene scene = SceneManager.GetActiveScene();
         sceneName = scene.name;
 
@@ -43,7 +44,12 @@ public class MovementController : MonoBehaviour
         Debug.Log("Movement Script Working");
 
         //Player can't run into magic
-        Physics2D.IgnoreLayerCollision(7, 8);
+        Physics2D.IgnoreLayerCollision(7, 8);        
+    }
+
+    private void Start()
+    {
+
     }
 
     void Update()
@@ -51,11 +57,31 @@ public class MovementController : MonoBehaviour
         //left: -1, nothing: 0, right: 1
         horizontalValue = Input.GetAxisRaw("Horizontal");
 
+        if(rb.velocity.x < 0.1f)
+        {
+            isMoving = true;
+        }
+
+        
+        //sound
+        if(isMoving)
+        {
+           
+        }
+        else
+        {
+
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             if(jumpCount > 0)
             {
                 Jump();
+
+                //sound
+                
             } 
         }
 
@@ -143,6 +169,8 @@ public class MovementController : MonoBehaviour
         jumpCancelled = false;
         jumpTime = 0;
         jumpCount -= 1;
+
+        FindObjectOfType<AudioManager>().Play("PlayerJump"); ;
     }
 
     void Die()
@@ -160,16 +188,6 @@ public class MovementController : MonoBehaviour
         if (collision.gameObject.tag == "Hazard")
         {
             Die();
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("Ice"))
-        {
-           //coll.material.dynamicFriction = 2;
-
-            Debug.Log("ice");
         }
     }
 }
