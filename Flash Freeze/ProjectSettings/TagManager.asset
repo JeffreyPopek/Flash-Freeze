@@ -48,6 +48,9 @@ TagManager:
   - name: Sign
     uniqueID: 1081560887
     locked: 0
+  - name: decorations
+    uniqueID: 917346689
+    locked: 0
   - name: Player
     uniqueID: 2892529647
     locked: 0
