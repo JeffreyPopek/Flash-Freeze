@@ -8,16 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Test Scene.unity
-    guid: 12f49b5bdd1a53a4199880867374404b
-  - enabled: 1
-    path: Assets/Scenes/Jackson_Level.unity
-    guid: bf1a1d3365706484fa24064f2a0c7e63
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 712329bdf88515244b6ab5f1ed28245d
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 07eb0bb51381271418a3f0da3cdb1614
+  - enabled: 0
+    path: Assets/Scenes/Jackson_Level.unity
+    guid: bf1a1d3365706484fa24064f2a0c7e63
+  - enabled: 0
+    path: Assets/Scenes/Test Scene.unity
+    guid: 12f49b5bdd1a53a4199880867374404b
   m_configObjects: {}

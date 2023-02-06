@@ -10,8 +10,6 @@ public class Sign : MonoBehaviour
     [SerializeField] private bool playerInRange;
 
     private SpriteRenderer spriteRenderer;
-    //[SerializeField] private GameObject openText;
-    //[SerializeField] private GameObject closeText;
 
     private void Awake()
     {
@@ -25,39 +23,24 @@ public class Sign : MonoBehaviour
         {
             if(dialogBox.activeInHierarchy)
             {
-                dialogBox.SetActive(false);
-                
-
-                //openText.SetActive(true);
-                //closeText.SetActive(false);
-                
+                dialogBox.SetActive(false);      
             }
             else
             {
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
-
-                //openText.SetActive(false);
-                //closeText.SetActive(true);
             }
-        }
-
-
-
-        
+        }   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            //openText.SetActive(true);
-
             playerInRange = true;
 
-            spriteRenderer.color = Color.red;
-
-            //openText.SetActive(true);
+            dialogBox.SetActive(true);
+            //spriteRenderer.color = Color.red;
         }
     }
 
@@ -69,10 +52,7 @@ public class Sign : MonoBehaviour
 
             spriteRenderer.color = Color.white;
 
-            //openText.SetActive(false);
-
-            //openText.SetActive(false);
-            //closeText.SetActive(false);
+            dialogBox.SetActive(false);
         }
     }
 }

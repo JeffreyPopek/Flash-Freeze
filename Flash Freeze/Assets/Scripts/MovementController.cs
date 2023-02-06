@@ -29,26 +29,26 @@ public class MovementController : MonoBehaviour
 
 
     //animations
-    private AnimationClip[] animationClips;
-    private Animator animator;
+    //private AnimationClip[] animationClips;
+    //private Animator animator;
 
-    private string currentAnimaton;
-    private bool isAttackPressed;
-    private bool isAttacking;
-    private bool isWalking;
+    //private string currentAnimaton;
+    //private bool isAttackPressed;
+    //private bool isAttacking;
+    //private bool isWalking;
 
-    [SerializeField] private float attackDelay = 0.3f;
+    //[SerializeField] private float attackDelay = 0.3f;
 
-    //Animation States
-    [SerializeField]
-    [Tooltip("Name of Idle Animation. Capitalization matters")]
-    string PLAYER_IDLE = "player_idle";
-    [SerializeField]
-    [Tooltip("Name of Run Animation. Capitalization matters")]
-    string PLAYER_RUN = "player_run";
-    [SerializeField]
-    [Tooltip("Name of jump Animation. Capitalization matters")]
-    string PLAYER_JUMP = "player_jump";
+    ////Animation States
+    //[SerializeField]
+    //[Tooltip("Name of Idle Animation. Capitalization matters")]
+    //string PLAYER_IDLE = "player_idle";
+    //[SerializeField]
+    //[Tooltip("Name of Run Animation. Capitalization matters")]
+    //string PLAYER_RUN = "player_run";
+    //[SerializeField]
+    //[Tooltip("Name of jump Animation. Capitalization matters")]
+    //string PLAYER_JUMP = "player_jump";
     //[SerializeField]
     //[Tooltip("Name of attack Animation. Capitalization matters")]
     //string PLAYER_ATTACK = "player_attack";
@@ -62,10 +62,10 @@ public class MovementController : MonoBehaviour
         jumpCount = maxJumps;
 
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
 
-        GetAnimationClips();
-        ValidateAnimationNames();
+        //GetAnimationClips();
+        //ValidateAnimationNames();
 
         //Player can't run into magic
         Physics2D.IgnoreLayerCollision(7, 8);
@@ -76,10 +76,10 @@ public class MovementController : MonoBehaviour
         //left: -1, nothing: 0, right: 1
         horizontalValue = Input.GetAxisRaw("Horizontal");
 
-        if(horizontalValue == 0)
-        {
-            isWalking = false;
-        }
+        //if(horizontalValue == 0)
+        //{
+        //    isWalking = false;
+        //}
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
@@ -115,14 +115,14 @@ public class MovementController : MonoBehaviour
 
 
         //check if walking or idle
-        if(isWalking)
-        {
-            ChangeAnimationState(PLAYER_RUN);
-        }
-        else
-        {
-            ChangeAnimationState(PLAYER_IDLE);
-        }
+        //if(isWalking)
+        //{
+        //    ChangeAnimationState(PLAYER_RUN);
+        //}
+        //else
+        //{
+        //    ChangeAnimationState(PLAYER_IDLE);
+        //}
     }
 
     private bool IsGrounded()
@@ -161,7 +161,7 @@ public class MovementController : MonoBehaviour
 
     void Move(float direction)
     {
-        isWalking = true;
+        //isWalking = true;
 
         float xVal = direction * (xSpeed * 100) * Time.deltaTime;
         Vector2 targetVelocity = new Vector2(xVal, rb.velocity.y);
@@ -191,11 +191,14 @@ public class MovementController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("PlayerJump");
 
         //animation
-        ChangeAnimationState(PLAYER_JUMP);
+        //ChangeAnimationState(PLAYER_JUMP);
     }
 
     void Die()
     {
+        //sound
+        FindObjectOfType<AudioManager>().Play("PlayerDie");
+
         SceneManager.LoadScene(sceneName);
     }
 
@@ -213,59 +216,59 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    private void GetAnimationClips()
-    {
+    //private void GetAnimationClips()
+    //{
 
-        // Get a list of the animation clips
-        animationClips = animator.runtimeAnimatorController.animationClips;
+    //    // Get a list of the animation clips
+    //    animationClips = animator.runtimeAnimatorController.animationClips;
 
-        // Iterate over the clips and gather their information
-        /*
-        foreach (AnimationClip animClip in animationClips)
-        {
-            Debug.Log(animClip.name + ": " + animClip.length);
-        }
-        */
-    }
+    //    // Iterate over the clips and gather their information
+    //    /*
+    //    foreach (AnimationClip animClip in animationClips)
+    //    {
+    //        Debug.Log(animClip.name + ": " + animClip.length);
+    //    }
+    //    */
+    //}
 
-    private bool CheckIfAnimationFound(string AnimName)
-    {
-        foreach (AnimationClip animClip in animationClips)
-        {
-            // Debug.Log(animClip.name + ": " + animClip.length);
-            if (animClip.name == AnimName)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+    //private bool CheckIfAnimationFound(string AnimName)
+    //{
+    //    foreach (AnimationClip animClip in animationClips)
+    //    {
+    //        // Debug.Log(animClip.name + ": " + animClip.length);
+    //        if (animClip.name == AnimName)
+    //        {
+    //            return true;
+    //        }
+    //    }
+    //    return false;
+    //}
 
-    private void ValidateAnimationNames()
-    {
-        if (animationClips.Length == 0) GetAnimationClips();
+    //private void ValidateAnimationNames()
+    //{
+    //    if (animationClips.Length == 0) GetAnimationClips();
 
-        if (CheckIfAnimationFound(PLAYER_IDLE))
-            Debug.Log("Idle Animation " + PLAYER_IDLE + " FOUND.");
-        else
-            Debug.LogError("Idle Animation " + PLAYER_IDLE + " NOT FOUND Make sure the spelling and capitalization is same as what is in the Animator animation clip");
+    //    if (CheckIfAnimationFound(PLAYER_IDLE))
+    //        Debug.Log("Idle Animation " + PLAYER_IDLE + " FOUND.");
+    //    else
+    //        Debug.LogError("Idle Animation " + PLAYER_IDLE + " NOT FOUND Make sure the spelling and capitalization is same as what is in the Animator animation clip");
 
-        if (CheckIfAnimationFound(PLAYER_JUMP))
-            Debug.Log("Idle Animation " + PLAYER_JUMP + " FOUND");
-        else
-            Debug.LogError("Idle Animation " + PLAYER_JUMP + " NOT FOUND Make sure the spelling and capitalization is same as what is in the Animator animation clip");
+    //    if (CheckIfAnimationFound(PLAYER_JUMP))
+    //        Debug.Log("Idle Animation " + PLAYER_JUMP + " FOUND");
+    //    else
+    //        Debug.LogError("Idle Animation " + PLAYER_JUMP + " NOT FOUND Make sure the spelling and capitalization is same as what is in the Animator animation clip");
 
-        if (CheckIfAnimationFound(PLAYER_RUN))
-            Debug.Log("Idle Animation " + PLAYER_RUN + " FOUND");
-        else
-            Debug.LogError("Idle Animation " + PLAYER_RUN + " NOT FOUND Make sure the spelling and capitalization is same as what is in the Animator animation clip");
-    }
+    //    if (CheckIfAnimationFound(PLAYER_RUN))
+    //        Debug.Log("Idle Animation " + PLAYER_RUN + " FOUND");
+    //    else
+    //        Debug.LogError("Idle Animation " + PLAYER_RUN + " NOT FOUND Make sure the spelling and capitalization is same as what is in the Animator animation clip");
+    //}
 
-    void ChangeAnimationState(string newAnimation)
-    {
-        if (currentAnimaton == newAnimation) return;
+    //void ChangeAnimationState(string newAnimation)
+    //{
+    //    if (currentAnimaton == newAnimation) return;
 
-        animator.Play(newAnimation);
-        currentAnimaton = newAnimation;
-    }
+    //    animator.Play(newAnimation);
+    //    currentAnimaton = newAnimation;
+    //}
 }
