@@ -93,3 +93,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: TextSound
+    clip: {fileID: 8300000, guid: 1f74b2ab63e017b4daf38e7ab11d9634, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

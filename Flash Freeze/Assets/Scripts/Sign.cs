@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 
@@ -9,50 +10,46 @@ public class Sign : MonoBehaviour
     [SerializeField] private string dialog;
     [SerializeField] private bool playerInRange;
 
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private float writtingSpeed = 50f;
+    private IEnumerator coroutine;
 
-    private void Awake()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    //typing sounds
+    [SerializeField] private int frequencyLevel = 2;
+    [SerializeField] float maxPitch = 1.0f;
 
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.E) && playerInRange) 
-        {
-            if(dialogBox.activeInHierarchy)
-            {
-                dialogBox.SetActive(false);      
-            }
-            else
-            {
-                dialogBox.SetActive(true);
-                dialogText.text = dialog;
-            }
-        }   
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
-        {
-            playerInRange = true;
+        dialogBox.SetActive(true);
 
-            dialogBox.SetActive(true);
-            //spriteRenderer.color = Color.red;
-        }
+        coroutine = TypeText(dialog, dialogText);
+        StartCoroutine(coroutine);
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        dialogBox.SetActive(false);
+        StopCoroutine(coroutine);
+    }
+
+    private IEnumerator TypeText(string textToType, TMP_Text textLabel)
+    {
+        float timer = 0;
+        int charIndex = 0;
+
+        while (charIndex < textToType.Length)
         {
-            playerInRange = false;
+            timer += Time.deltaTime * writtingSpeed;
+            charIndex = Mathf.FloorToInt(timer);
+            charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
 
-            spriteRenderer.color = Color.white;
+            textLabel.text = textToType.Substring(0, charIndex);
 
-            dialogBox.SetActive(false);
+
+            yield return null;
         }
+
+        textLabel.text = textToType;
     }
 }
