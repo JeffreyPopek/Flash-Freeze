@@ -348,7 +348,7 @@ Transform:
   - {fileID: 1575046057}
   - {fileID: 2024100367}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &353745583
 PrefabInstance:
@@ -500,7 +500,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1973097352734706041, guid: 127e4389478d74d4eaa682b88d51b734, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1973097352734706041, guid: 127e4389478d74d4eaa682b88d51b734, type: 3}
       propertyPath: m_LocalPosition.x
@@ -612,13 +612,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 895636601128695140, guid: 5c40cc8bb76cfd74ebcd15b60a1135e3, type: 3}
+    - target: {fileID: 8740557375475442601, guid: 5c40cc8bb76cfd74ebcd15b60a1135e3, type: 3}
+      propertyPath: sceneToLoad
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: sceneName
       value: MainLevel
       objectReference: {fileID: 0}
     - target: {fileID: 895636601128695163, guid: 5c40cc8bb76cfd74ebcd15b60a1135e3, type: 3}
       propertyPath: m_Name
       value: ExitTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740557375475442601, guid: 5c40cc8bb76cfd74ebcd15b60a1135e3, type: 3}
+      propertyPath: sceneToLoad
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c40cc8bb76cfd74ebcd15b60a1135e3, type: 3}
@@ -925,7 +933,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2637043606320632811, guid: 4b7e68a7460caef468d079d08cd8a9d5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2637043606320632811, guid: 4b7e68a7460caef468d079d08cd8a9d5, type: 3}
       propertyPath: m_LocalPosition.x
