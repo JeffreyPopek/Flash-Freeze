@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 2637043606320632814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.55, y: -0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2637043606578500008}
@@ -159,9 +159,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1402437649
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cfddde5d31e828a49b86ed1e0470dfe4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85bef39f7d93c2242a560836c9ccb58b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -209,6 +209,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  spriteRenderer: {fileID: 2637043606320632808}
+  playerSprite: {fileID: 21300000, guid: 85bef39f7d93c2242a560836c9ccb58b, type: 3}
+  jumpSprite: {fileID: 21300000, guid: 160e306aaa3441f4eb18e37b37bb13fb, type: 3}
+  attackSprite: {fileID: 21300000, guid: decc5909309c8644c983fa021ee855ed, type: 3}
   xSpeed: 5
   rb: {fileID: 2637043606320632596}
   buttonTime: 0.5
@@ -228,18 +232,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.06500447, y: 0.016251564}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.26, y: 1.61}
+    oldSize: {x: 10.24, y: 10.24}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.26, y: 1.61}
+  m_Size: {x: 6.1354313, y: 8.923149}
   m_EdgeRadius: 0
 --- !u!1 &2637043606578500009
 GameObject:
