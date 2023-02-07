@@ -8,19 +8,6 @@ public class TypeWritterEffect : MonoBehaviour
 
     [SerializeField] private float writtingSpeed = 50f;
 
-    private bool soundPlaying = false;
-
-    //private void Update()
-    //{
-    //    if (!soundPlaying)
-    //    {
-    //        //sound
-    //        FindObjectOfType<AudioManager>().Play("TextSound");
-
-    //        soundPlaying = true;
-    //    }
-    //}
-
 
     public void Run(string textToType, TMP_Text textLabel)
     {
