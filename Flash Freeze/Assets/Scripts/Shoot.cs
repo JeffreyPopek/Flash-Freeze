@@ -46,6 +46,7 @@ public class Shoot : MonoBehaviour
                 timer = 0;
             }
         }
+
         if (Input.GetMouseButton(0) && canFire)
         {
             ShootSpell();

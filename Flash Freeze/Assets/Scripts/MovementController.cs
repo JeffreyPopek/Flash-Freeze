@@ -14,6 +14,12 @@ public class MovementController : MonoBehaviour
     [SerializeField] private Sprite jumpSprite;
     [SerializeField] private Sprite attackSprite;
 
+    private bool isAttacking = false;
+    private float timer;
+    private float animTime = 0.5f;
+
+
+
 
     //x movement
     [SerializeField] float xSpeed = 1;
@@ -74,6 +80,26 @@ public class MovementController : MonoBehaviour
             if (jumpTime > buttonTime)
             {
                 isJumping = false;
+            }
+        }
+
+
+        if (Input.GetMouseButton(0))
+        {
+            isAttacking = true;
+            spriteRenderer.sprite = attackSprite;
+        }
+
+
+        if (isAttacking)
+        {
+            timer += Time.deltaTime;
+
+            if (timer > animTime)
+            {
+                isAttacking = false;
+                timer = 0;
+                spriteRenderer.sprite = playerSprite;
             }
         }
     }
