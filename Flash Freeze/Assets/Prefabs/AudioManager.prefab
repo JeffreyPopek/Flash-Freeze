@@ -47,55 +47,55 @@ MonoBehaviour:
   sounds:
   - name: PlayerJump
     clip: {fileID: 8300000, guid: 4066b87903680484b9ea63bc2384168a, type: 3}
-    volume: 0.1
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Music
     clip: {fileID: 8300000, guid: 72952f45a0d32f54fa1475a6ea1d19bf, type: 3}
-    volume: 0.1
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: PlayerSpell
     clip: {fileID: 8300000, guid: b7ce8e503b15dd740929505b6293c602, type: 3}
-    volume: 0.1
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Freeze
     clip: {fileID: 8300000, guid: a5cd69aaf6cfc384ebe201fe517abac6, type: 3}
-    volume: 0.3
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PlayerLand
     clip: {fileID: 8300000, guid: e372e46298042a04a8a137bd66315467, type: 3}
-    volume: 0.05
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: IceBreak
     clip: {fileID: 8300000, guid: a6a395bd3224ac844bfffa845ff99384, type: 3}
-    volume: 0.05
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PlayerDie
     clip: {fileID: 8300000, guid: 085518ff72cf5054bae0a9a5e019b44d, type: 3}
-    volume: 0.05
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ButtonPress
     clip: {fileID: 8300000, guid: d8b51dd65a4895648ab0761539e2c70a, type: 3}
-    volume: 0.1
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: TextSound
     clip: {fileID: 8300000, guid: 1f74b2ab63e017b4daf38e7ab11d9634, type: 3}
-    volume: 0.1
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}

@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
         //sound
         FindObjectOfType<AudioManager>().Play("ButtonPress");
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
@@ -21,5 +21,13 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("ButtonPress");
 
         Application.Quit();
+    }
+
+    public void Menu()
+    {
+        //sound
+        FindObjectOfType<AudioManager>().Play("ButtonPress");
+
+        SceneManager.LoadScene(0);
     }
 }

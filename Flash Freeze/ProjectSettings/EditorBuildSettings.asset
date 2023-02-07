@@ -17,9 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainLevel.unity
     guid: 0699fb3b23bf4e343b0daf04cb9f0e9e
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 0ca5434f5bdba794688ff33895380ed0
   - enabled: 0
-    path: Assets/Scenes/Jackson_Level.unity
-    guid: bf1a1d3365706484fa24064f2a0c7e63
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/Test Scene.unity
     guid: 12f49b5bdd1a53a4199880867374404b
