@@ -27,8 +27,6 @@ public class TypeWritterEffect : MonoBehaviour
 
             textLabel.text = textToType.Substring(0, charIndex);
 
-            soundPlaying = false;
-
             yield return null;
         }
 

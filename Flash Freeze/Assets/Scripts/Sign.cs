@@ -13,10 +13,6 @@ public class Sign : MonoBehaviour
     [SerializeField] private float writtingSpeed = 50f;
     private IEnumerator coroutine;
 
-    //typing sounds
-    [SerializeField] private int frequencyLevel = 2;
-    [SerializeField] float maxPitch = 1.0f;
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
